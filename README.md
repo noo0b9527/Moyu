@@ -7,4 +7,4 @@ All trademarks and registered trademarks are the property of their respective ow
 
 ## License
 
-Moyu is licensed under the MIT License, see [LICENSE] for more information.
+Moyu is licensed under the MIT License, See [LICENSE](LICENSE) for more information.
