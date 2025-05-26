@@ -1,3 +1,6 @@
 *.vs
 *.user
 x64/
+
+projects/**/*.cpp
+projects/**/*.h
