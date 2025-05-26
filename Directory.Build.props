@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <!-- 设置最终输出目录为上一级路径 -->
+    <BaseOutputPath>$(MSBuildThisFileDirectory).\</BaseOutputPath>
+    <OutputPath>$(BaseOutputPath)\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
+
+    <!-- 设置中间输出目录，按项目名分类 -->
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory).\$(Platform)\$(Configuration)\Intermediate\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>

@@ -63,6 +63,7 @@ Checks: >
   readability-inconsistent-declaration-parameter-name,
   readability-identifier-naming,
 
+  
   # === bugprone ===
   bugprone-undelegated-constructor,
   bugprone-argument-comment,
@@ -183,7 +184,7 @@ CheckOptions:
   - key: readability-identifier-naming.MemberCase
     value: lower_case
   - key: readability-identifier-naming.ClassMemberPrefix
-    value: m_
+    value: ''
   - key: readability-identifier-naming.PrivateMemberPrefix
     value: ''
   - key: readability-identifier-naming.ProtectedMemberPrefix
@@ -191,7 +192,7 @@ CheckOptions:
   - key: readability-identifier-naming.PublicMemberCase
     value: lower_case
   - key: readability-identifier-naming.MethodCase
-    value: camelBack
+    value: CamelBack
   - key: readability-identifier-naming.PrivateMethodPrefix
     value: ''
   - key: readability-identifier-naming.ProtectedMethodPrefix

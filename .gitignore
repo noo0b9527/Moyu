@@ -1,4 +1,3 @@
-.vs
-bin/
-obj/
-out/
+*.vs
+*.user
+x64/
