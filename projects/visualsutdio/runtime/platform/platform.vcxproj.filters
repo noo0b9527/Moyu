@@ -21,7 +21,13 @@
     <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_export.h">
       <Filter>API Headers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_gpu.h">
+      <Filter>API Headers</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_path.h">
+      <Filter>API Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_window.h">
       <Filter>API Headers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -76,7 +76,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_defines.h" />
     <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_export.h" />
+    <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_gpu.h" />
     <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_path.h" />
+    <ClInclude Include="..\..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

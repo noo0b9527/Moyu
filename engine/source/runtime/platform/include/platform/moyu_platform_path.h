@@ -24,12 +24,13 @@ SOFTWARE.
 
 #pragma once
 
-#include "moyu_platform_defines.h"
+#include <string>
+#include <string_view>
+#include <vector>
+
 #include "moyu_platform_export.h"
 
-#include <string_view>
-
-namespace moyu::platform
+namespace moyu
 {
     class MOYU_PLATFORM_API Path
     {
@@ -43,15 +44,36 @@ namespace moyu::platform
         Path(Path&&)            = delete;
         Path& operator=(Path&&) = delete;
 
-        // Get current application run path
-        static const std::string_view GetRunPath();
+        // Get current application run directory
+        static const std::string GetCurrentDirectory();
 
-        // Returns the file name and extension of the specified path string
-        static const std::string_view
-        GetDirectoryName(const std::string_view path);
+        // Returns the directory information for the specified path.
+        static const std::string GetDirectoryName(const std::string_view path);
+
+        // Returns a relative path from one path to another.
+        static const std::string
+        GetRelativePath(const std::string_view relativeTo,
+                        const std::string_view path);
+
+        // Returns the file name and extension of the specified path string.
+        static const std::string GetFileName(const std::string_view path);
+
+        // Returns the file name of the specified path string without the
+        // extension.
+        static const std::string
+        GetFileNameWithoutExtension(const std::string_view path);
+
+        // Returns the extension (including the period ".") of the specified
+        // path string.
+        static const std::string GetExtension(const std::string_view path);
+
+        // Decompose the path into a string array consisting of each level of
+        // directory/file name
+        static const std::vector<std::string>
+        GetPathSegments(const std::string_view path);
 
         // Determines whether the specified file or directory exists.
-        static bool Exists(std::string_view path);
-    };
+        static bool Exists(const std::string_view path);
+    }; // class Path
 
-} // namespace moyu::platform
+} // namespace moyu
