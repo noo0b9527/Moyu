@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="content">
+      <UniqueIdentifier>{d6a23a9d-a458-47ae-b5cf-5dfc4246e0da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application">
+      <UniqueIdentifier>{af0fcb6f-dfb9-446a-8997-6d82545cd925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform">
+      <UniqueIdentifier>{544d4392-4c07-4cff-b262-8e7e50a49b3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\Header API">
+      <UniqueIdentifier>{a8464524-0a7c-42bb-95f1-fd1a33f58c2e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_defines.h">
+      <Filter>platform\Header API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_export.h">
+      <Filter>platform\Header API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_gpu.h">
+      <Filter>platform\Header API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_path.h">
+      <Filter>platform\Header API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\engine\source\runtime\platform\include\platform\moyu_platform_window.h">
+      <Filter>platform\Header API</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\engine\source\runtime\application\moyu_main.cpp">
+      <Filter>application</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
