@@ -17,7 +17,7 @@ int main(int argc, const char** argv)
 #endif
     std::printf("Hello Exe Main\n");
 
-    HMODULE moyu = LoadLibraryExA("moyu.dll", nullptr, 0);
+    HMODULE moyu = LoadLibraryExA("moyu_shared.dll", nullptr, 0);
     if (moyu == nullptr)
     {
         std::cout << "Could not load fmapi.dll, Error :" << GetLastError()

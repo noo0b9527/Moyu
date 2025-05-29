@@ -3,40 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "moyu", "projects\visualsutdio\moyu\moyu.vcxproj", "{078AE239-1334-4D7A-B8EF-7D6721135ADC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor", "projects\editor\editor.vcxproj", "{B3508BCC-84A8-4674-A8E7-226223EE5402}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "moyu_exe", "projects\visualsutdio\moyu_exe\moyu_exe.vcxproj", "{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "runtime", "projects\runtime\runtime.vcxproj", "{C8EB7DB9-3780-40F9-BC82-FE7D9BD07EE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
-		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Debug|Any CPU.Build.0 = Debug|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Debug|x64.ActiveCfg = Debug|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Debug|x64.Build.0 = Debug|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Debug|x86.ActiveCfg = Debug|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Release|Any CPU.ActiveCfg = Release|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Release|Any CPU.Build.0 = Release|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Release|x64.ActiveCfg = Release|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Release|x64.Build.0 = Release|x64
-		{078AE239-1334-4D7A-B8EF-7D6721135ADC}.Release|x86.ActiveCfg = Release|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Debug|Any CPU.Build.0 = Debug|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Debug|x64.ActiveCfg = Debug|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Debug|x64.Build.0 = Debug|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Debug|x86.ActiveCfg = Debug|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Release|Any CPU.ActiveCfg = Release|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Release|Any CPU.Build.0 = Release|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Release|x64.ActiveCfg = Release|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Release|x64.Build.0 = Release|x64
-		{56DE0A60-8165-4C6D-9B93-C1B3B5F74F02}.Release|x86.ActiveCfg = Release|x64
+		{B3508BCC-84A8-4674-A8E7-226223EE5402}.Debug|x64.ActiveCfg = Debug|x64
+		{B3508BCC-84A8-4674-A8E7-226223EE5402}.Debug|x64.Build.0 = Debug|x64
+		{B3508BCC-84A8-4674-A8E7-226223EE5402}.Debug|x86.ActiveCfg = Debug|x64
+		{B3508BCC-84A8-4674-A8E7-226223EE5402}.Release|x64.ActiveCfg = Release|x64
+		{B3508BCC-84A8-4674-A8E7-226223EE5402}.Release|x64.Build.0 = Release|x64
+		{B3508BCC-84A8-4674-A8E7-226223EE5402}.Release|x86.ActiveCfg = Release|x64
+		{C8EB7DB9-3780-40F9-BC82-FE7D9BD07EE6}.Debug|x64.ActiveCfg = Debug|x64
+		{C8EB7DB9-3780-40F9-BC82-FE7D9BD07EE6}.Debug|x64.Build.0 = Debug|x64
+		{C8EB7DB9-3780-40F9-BC82-FE7D9BD07EE6}.Debug|x86.ActiveCfg = Debug|x64
+		{C8EB7DB9-3780-40F9-BC82-FE7D9BD07EE6}.Release|x64.ActiveCfg = Release|x64
+		{C8EB7DB9-3780-40F9-BC82-FE7D9BD07EE6}.Release|x64.Build.0 = Release|x64
+		{C8EB7DB9-3780-40F9-BC82-FE7D9BD07EE6}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
