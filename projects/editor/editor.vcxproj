@@ -11,12 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\engine\source\editor\editor\editor.cpp" />
     <ClCompile Include="..\..\engine\source\editor\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\runtime\runtime.vcxproj">
       <Project>{c8eb7db9-3780-40f9-bc82-fe7d9bd07ee6}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\engine\source\editor\editor\editor.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -55,9 +59,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>moyu</TargetName>
+    <IncludePath>$(SolutionDir)engine\source\runtime\public;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>moyu</TargetName>
+    <IncludePath>$(SolutionDir)engine\source\runtime\public;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

@@ -19,6 +19,9 @@
     <Filter Include="platform\include\platform">
       <UniqueIdentifier>{0c9acbda-fee2-4d05-994b-8626f93523bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="public\host">
+      <UniqueIdentifier>{e523d9c4-afc2-4422-bb39-c4c08ad26fca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_defines.h">
@@ -35,6 +38,12 @@
     </ClInclude>
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_window.h">
       <Filter>platform\include\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\engine\source\runtime\public\host\moyu_host.h">
+      <Filter>public\host</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\engine\source\runtime\public\main\main.h">
+      <Filter>public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

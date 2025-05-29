@@ -4,7 +4,36 @@
 
 #include <windows.h>
 
-typedef int (*DLL_MAIN)(int argc, const char** argv);
+#include "host/moyu_host.h"
+#include "main/main.h"
+
+#include "editor/editor.h"
+
+namespace moyu
+{
+    static EditorApp* app;
+
+    static bool Init()
+    {
+        app = new EditorApp();
+        return app->Init();
+    }
+
+    static void Exit() { app->Exit(); }
+
+    static bool Load()
+    {
+        app->Load();
+        return false;
+    }
+
+    static void Unload() { app->Unload(); }
+
+    static void Update(float deltaTime) { app->Update(deltaTime); }
+
+    static void Draw() { app->Draw(); }
+
+} // namespace moyu
 
 #if !defined(_CONSOLE)
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
@@ -15,7 +44,7 @@ int main(int argc, const char** argv)
 {
     // HINSTANCE instance = GetModuleHandle(nullptr);
 #endif
-    std::printf("Hello Exe Main\n");
+    std::printf("Hello Editor Host Main\n");
 
     HMODULE moyu = LoadLibraryExA("moyu_shared.dll", nullptr, 0);
     if (moyu == nullptr)
@@ -25,8 +54,17 @@ int main(int argc, const char** argv)
         return EXIT_FAILURE;
     }
 
-    DLL_MAIN moyu_main = (DLL_MAIN)(GetProcAddress(moyu, "MoyuMain"));
-    int rc = moyu_main(argc, argv);
+    MOYU_HostAppDesc host_hook_desc = {
+        .Init          = &moyu::Init,
+        .Exit          = &moyu::Exit,
+        .LoadContent   = &moyu::Load,
+        .UnloadContent = &moyu::Unload,
+        .Update        = &moyu::Update,
+        .Draw          = &moyu::Draw,
+    };
+
+    MoyuMain moyu_main = (MoyuMain)(GetProcAddress(moyu, "MoyuMain"));
+    int      rc        = moyu_main(argc, argv, &host_hook_desc);
 
     return rc;
 }

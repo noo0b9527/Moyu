@@ -2,5 +2,18 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="..\..\engine\source\editor\main.cpp" />
+    <ClCompile Include="..\..\engine\source\editor\editor\editor.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="editor">
+      <UniqueIdentifier>{4987ccdd-6ddf-42dd-a6d5-3b41fd9e246d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\engine\source\editor\editor\editor.h">
+      <Filter>editor</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

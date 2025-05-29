@@ -19,6 +19,8 @@
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_gpu.h" />
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_path.h" />
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_window.h" />
+    <ClInclude Include="..\..\engine\source\runtime\public\host\moyu_host.h" />
+    <ClInclude Include="..\..\engine\source\runtime\public\main\main.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -57,11 +59,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>moyu_shared</TargetName>
-    <IncludePath>$(SolutionDir)engine\source\runtime\platform\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)engine\source\runtime\platform\include;$(SolutionDir)engine\source\runtime\public;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>moyu_shared</TargetName>
-    <IncludePath>$(SolutionDir)engine\source\runtime\platform\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)engine\source\runtime\platform\include;$(SolutionDir)engine\source\runtime\public;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
