@@ -24,13 +24,22 @@ SOFTWARE.
 
 #pragma once
 
-#include "moyu_platform_defines.h"
+
+#include "build/build_config.h"
 
 
-#if defined(MOYU_PLATFORM_WINDOWS) && defined(MOYU_SHARED_LIB)
-#define MOYU_PLATFORM_API __declspec(dllexport)
-#define MOYU_PLATFORM_CALL __cdecl
-#else
-#define MOYU_PLATFORM_API
-#define MOYU_PLATFORM_CALL
-#endif
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
+    struct MOYU_RendererDesc;
+    struct MOYU_QueueDesc;
+    struct MOYU_SamplerDesc;
+
+
+
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */

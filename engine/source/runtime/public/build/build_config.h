@@ -22,43 +22,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <iostream>
+#pragma once
 
-#include "public/build/build_config.h"
-#include "public/host/moyu_host.h"
+// Set PLATFORM
+#if defined(_WIN32)
+#define MOYU_PLATFORM_WINDOWS 1
+#endif // defined(_WIN32)
 
 
-extern "C"
-{
-    MOYUAPI int MOYUCALL MoyuMain(int argc, const char** argv,
-                                  MOYU_HostAppDesc* host_app);
-}
 
+// Set API And Call
 #if defined(MOYU_PLATFORM_WINDOWS)
-MOYUAPI int MOYUCALL MoyuMain(int argc, const char** argv,
-                              MOYU_HostAppDesc* host_app)
-#endif
-{
-    if (host_app == nullptr)
-    {
-        return -1;
-    }
 
-    if (argc > 0)
-    {
-        std::printf("%s\n", argv[0]);
-    }
+#if defined(EXPORT_DLL)
+#define MOYUAPI __declspec(dllexport)
+#define MOYUCALL __cdecl
+#else
+#define MOYUAPI
+#define MOYUCALL
+#endif // defined(EXPORT_DLL)
 
-    std::printf("Hello Moyu Dll Main\n");
+#else
 
-    host_app->Init();
-    host_app->LoadContent();
-
-    host_app->Update(1.0f);
-    host_app->Draw();
-
-    host_app->UnloadContent();
-    host_app->Exit();
-
-    return 0;
-}
+#endif // defined(MOYU_PLATFORM_WINDOWS)

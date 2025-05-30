@@ -24,6 +24,13 @@ SOFTWARE.
 
 #pragma once
 
-#if defined(_WIN32)
-#define MOYU_PLATFORM_WINDOWS 1
-#endif
+#include "build/build_config.h"
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif /* __cplusplus */
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */

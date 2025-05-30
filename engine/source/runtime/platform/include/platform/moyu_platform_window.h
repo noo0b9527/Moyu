@@ -24,7 +24,6 @@ SOFTWARE.
 
 #pragma once
 
-#include "moyu_platform_export.h"
 
 namespace moyu
 {

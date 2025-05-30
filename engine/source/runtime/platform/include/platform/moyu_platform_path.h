@@ -28,11 +28,10 @@ SOFTWARE.
 #include <string_view>
 #include <vector>
 
-#include "moyu_platform_export.h"
 
 namespace moyu
 {
-    class MOYU_PLATFORM_API Path
+    class Path
     {
     public:
         Path()  = delete;

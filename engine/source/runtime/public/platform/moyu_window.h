@@ -22,43 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#include <iostream>
+#pragma once
 
-#include "public/build/build_config.h"
-#include "public/host/moyu_host.h"
+#include "build/build_config.h"
 
-
+#ifdef __cplusplus
 extern "C"
 {
-    MOYUAPI int MOYUCALL MoyuMain(int argc, const char** argv,
-                                  MOYU_HostAppDesc* host_app);
+#endif /* __cplusplus */
+
+#ifdef __cplusplus
 }
-
-#if defined(MOYU_PLATFORM_WINDOWS)
-MOYUAPI int MOYUCALL MoyuMain(int argc, const char** argv,
-                              MOYU_HostAppDesc* host_app)
-#endif
-{
-    if (host_app == nullptr)
-    {
-        return -1;
-    }
-
-    if (argc > 0)
-    {
-        std::printf("%s\n", argv[0]);
-    }
-
-    std::printf("Hello Moyu Dll Main\n");
-
-    host_app->Init();
-    host_app->LoadContent();
-
-    host_app->Update(1.0f);
-    host_app->Draw();
-
-    host_app->UnloadContent();
-    host_app->Exit();
-
-    return 0;
-}
+#endif /* __cplusplus */

@@ -14,13 +14,15 @@
     <ClCompile Include="..\..\engine\source\runtime\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_defines.h" />
-    <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_export.h" />
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_gpu.h" />
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_path.h" />
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_window.h" />
+    <ClInclude Include="..\..\engine\source\runtime\public\build\build_config.h" />
     <ClInclude Include="..\..\engine\source\runtime\public\host\moyu_host.h" />
     <ClInclude Include="..\..\engine\source\runtime\public\main\main.h" />
+    <ClInclude Include="..\..\engine\source\runtime\public\platform\moyu_gpu.h" />
+    <ClInclude Include="..\..\engine\source\runtime\public\platform\moyu_input.h" />
+    <ClInclude Include="..\..\engine\source\runtime\public\platform\moyu_window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -68,7 +70,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>EXPORT_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -81,7 +83,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>EXPORT_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>

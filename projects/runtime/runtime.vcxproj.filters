@@ -4,9 +4,6 @@
     <ClCompile Include="..\..\engine\source\runtime\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="host">
-      <UniqueIdentifier>{6bcc7b83-4931-4701-a26b-4a75d8170436}</UniqueIdentifier>
-    </Filter>
     <Filter Include="platform">
       <UniqueIdentifier>{584a6a5e-ea4c-48f3-81b5-0028c610669e}</UniqueIdentifier>
     </Filter>
@@ -22,14 +19,20 @@
     <Filter Include="public\host">
       <UniqueIdentifier>{e523d9c4-afc2-4422-bb39-c4c08ad26fca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="public\platform">
+      <UniqueIdentifier>{7bc4b67e-6d4d-4d13-8aad-b06dbd763cc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public\main">
+      <UniqueIdentifier>{d1e7f33e-197b-4c49-ba0d-50085bdc225d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public\build">
+      <UniqueIdentifier>{e174a461-ba51-4dfa-8884-c7b250a420bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public\resource">
+      <UniqueIdentifier>{7b1dd924-2be2-40a0-8bf9-40f651d526fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_defines.h">
-      <Filter>platform\include\platform</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_export.h">
-      <Filter>platform\include\platform</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\engine\source\runtime\platform\include\platform\moyu_platform_gpu.h">
       <Filter>platform\include\platform</Filter>
     </ClInclude>
@@ -42,8 +45,20 @@
     <ClInclude Include="..\..\engine\source\runtime\public\host\moyu_host.h">
       <Filter>public\host</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\engine\source\runtime\public\platform\moyu_gpu.h">
+      <Filter>public\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\engine\source\runtime\public\platform\moyu_window.h">
+      <Filter>public\platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\engine\source\runtime\public\platform\moyu_input.h">
+      <Filter>public\platform</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\engine\source\runtime\public\main\main.h">
-      <Filter>public</Filter>
+      <Filter>public\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\engine\source\runtime\public\build\build_config.h">
+      <Filter>public\build</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
