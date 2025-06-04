@@ -5,7 +5,12 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runtime", "Runtime", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Moyu.Platform", "Engine\Source\Runtime\Platform\Moyu.Platform.vcxproj", "{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PropertySheets", "PropertySheets", "{79A97DC7-FB6D-4ABF-8674-83E48AFDC47C}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Source\PropertySheets\Moyu.props = Engine\Source\PropertySheets\Moyu.props
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Moyu.Platform", "Engine\Source\Runtime\Platform\Moyu.Platform.vcxproj", "{E902DF68-F47F-44F4-8EE5-4165B087031E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +20,18 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}.Debug|x64.ActiveCfg = Debug|x64
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}.Debug|x64.Build.0 = Debug|x64
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}.Debug|x86.ActiveCfg = Debug|Win32
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}.Debug|x86.Build.0 = Debug|Win32
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}.Release|x64.ActiveCfg = Release|x64
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}.Release|x64.Build.0 = Release|x64
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}.Release|x86.ActiveCfg = Release|Win32
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26}.Release|x86.Build.0 = Release|Win32
+		{E902DF68-F47F-44F4-8EE5-4165B087031E}.Debug|x64.ActiveCfg = Debug|x64
+		{E902DF68-F47F-44F4-8EE5-4165B087031E}.Debug|x64.Build.0 = Debug|x64
+		{E902DF68-F47F-44F4-8EE5-4165B087031E}.Debug|x86.ActiveCfg = Debug|x64
+		{E902DF68-F47F-44F4-8EE5-4165B087031E}.Release|x64.ActiveCfg = Release|x64
+		{E902DF68-F47F-44F4-8EE5-4165B087031E}.Release|x64.Build.0 = Release|x64
+		{E902DF68-F47F-44F4-8EE5-4165B087031E}.Release|x86.ActiveCfg = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BB20C9C7-2B6F-4D93-AD24-E5EDC4E11B26} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{E902DF68-F47F-44F4-8EE5-4165B087031E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {276FE93C-B4BE-486B-8E24-837648D150DD}

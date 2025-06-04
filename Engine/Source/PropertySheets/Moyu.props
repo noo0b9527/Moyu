@@ -1,71 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <MoyuRootDir>$(SolutionDir)</MoyuRootDir>
+    <MoyuBuildRootDir>$(SolutionDir)Build\</MoyuBuildRootDir>
+    <OutDir>$(MoyuBuildRootDir)$(Platform)_$(Configuration)\</OutDir>
+    <IntDir>$(MoyuBuildRootDir)_Temp\$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
   <PropertyGroup>
-    <MoyuRoot>$([System.IO.Path]::GetFullPath("$(MSBuildThisFileDirectory))</MoyuRoot>
-    <UsingMSVC>false</UsingMSVC>
-    <UsingMSVC Condition="'$(Platform)'=='x64'">true</UsingMSVC>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
-    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-    <IntDir>$(SolutionDir)$(Platform)\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\</OutDir>
-    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <ConformanceMode>true</ConformanceMode>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <ExceptionHandling>false</ExceptionHandling>
-      <PreprocessorDefinitions>_HAS_EXCEPTIONS=0;$(AdditionalForgeDefines);%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
       <WarningsAsErrors>true</WarningsAsErrors>
-      <WarningLevel Condition="!$(UsingMSVC)">EnableWarnings</WarningLevel>
-      <WarningLevel Condition="$(UsingMSVC)">Level4</WarningLevel>
-      <DisableSpecificWarnings Condition="$(UsingMSVC)">4201;4324;4127%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <AdditionalOptions>/bigobj /Zo /Zc:inline %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>$(ProjectName.ToUpper().Replace('.', '_'));_HAS_EXCEPTIONS=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="$(Platform) == 'x64'">NDEBUG;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="$(Configuration) == 'Debug'">MOYU_DEBUG=1;MOYU_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="$(Configuration) == 'Release'">MOYU_RELEASE=1;MOYU_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <!--<PreprocessorDefinitions Condition="$(Configuration) == 'Shipping'">MOYU_SHIPPING=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>-->
+      <WholeProgramOptimization Condition="$(Configuration) == 'Debug'">false</WholeProgramOptimization>
+      <WholeProgramOptimization Condition="$(Configuration) == 'Release'">true</WholeProgramOptimization>
+      <!--<WholeProgramOptimization Condition="$(Configuration) == 'Shipping'">true</WholeProgramOptimization>-->
+      <DisableSpecificWarnings>4189;4946;4191;5220;4266;4623;4711;4388;4355;5031;4774;4582;4365;5246;4061;5219;4514;4505;4251;4100;4127;4201;4577;4464;4668;4710;4820;5052;4619;4625;4626;5026;5027;5045;26495;5262;5264;5267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <IntrinsicFunctions Condition="$(Configuration) == 'Debug'">true</IntrinsicFunctions>
+      <IntrinsicFunctions Condition="$(Configuration) != 'Debug'">false</IntrinsicFunctions>
+      <FunctionLevelLinking Condition="$(Configuration) == 'Debug'">true</FunctionLevelLinking>
+      <FunctionLevelLinking Condition="$(Configuration) != 'Debug'">true</FunctionLevelLinking>
+      <InlineFunctionExpansion Condition="$(Configuration) == 'Debug'">OnlyExplicitInline</InlineFunctionExpansion>
+      <InlineFunctionExpansion Condition="$(Configuration) != 'Debug'">AnySuitable</InlineFunctionExpansion>
+      <Optimization Condition="$(Configuration) == 'Debug'">Disabled</Optimization>
+      <Optimization Condition="$(Configuration) != 'Debug'">MaxSpeed</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FloatingPointModel>Precise</FloatingPointModel>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <LinkTimeCodeGeneration Condition="$(Configuration) != 'Shipping'">Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration Condition="$(Configuration) == 'Shipping'">UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <GenerateDebugInformation Condition="$(Configuration) != 'Shipping'">DebugFull</GenerateDebugInformation>
+      <GenerateDebugInformation Condition="$(Configuration) == 'Shipping'">No</GenerateDebugInformation>
+      <RandomizedBaseAddress Condition="$(Configuration) == 'Debug'">false</RandomizedBaseAddress>
+      <CreateHotPatchableImage Condition="$(Configuration) != 'Shipping'">Enabled</CreateHotPatchableImage>
+      <OptimizeReferences Condition="$(Configuration) != 'Shipping'">false</OptimizeReferences>
+      <OptimizeReferences Condition="$(Configuration) == 'Shipping'">true</OptimizeReferences>
+      <EnableCOMDATFolding Condition="$(Configuration) != 'Shipping'">false</EnableCOMDATFolding>
+      <EnableCOMDATFolding Condition="$(Configuration) == 'Shipping'">true</EnableCOMDATFolding>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
     </Link>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Platform)' == 'x64'">
-    <ClCompile>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ExceptionHandling>false</ExceptionHandling>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
-      <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <ExceptionHandling>false</ExceptionHandling>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ImportGroup Label="PropertySheets">
-  </ImportGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Target Name="TodoGenerate">
+    <ItemGroup>
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <ComputeCompileInputsTargets>
+      $(ComputeCompileInputsTargets)
+    </ComputeCompileInputsTargets>
+  </PropertyGroup>
 </Project>

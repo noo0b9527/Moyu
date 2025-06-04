@@ -1,9 +1,8 @@
 <Project>
   <PropertyGroup>
-    
-    <BaseOutputPath>$(MSBuildThisFileDirectory).\</BaseOutputPath>
-    <OutputPath>$(BaseOutputPath)\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutputPath>
-    
-    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory).\$(Platform)\$(Configuration)\Intermediate\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <!--C# Use-->
+    <BaseOutputPath>$(SolutionDir)Build\</BaseOutputPath>
+    <OutputPath>$(BaseOutputPath)\$(Platform)_$(Configuration)\</OutputPath>
+    <BaseIntermediateOutputPath>$(BaseOutputPath)_Temp\$(Platform)_$(Configuration)\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
   </PropertyGroup>
 </Project>
