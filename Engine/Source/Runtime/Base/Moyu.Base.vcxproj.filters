@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{cd871a2f-3135-4bb1-823f-4e0b710511f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{01c3610d-294a-4cd1-a19f-bc8072fab9e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Base">
+      <UniqueIdentifier>{306fb23f-9079-44f5-a1c7-0cf3ee926715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Base\_Moudle">
+      <UniqueIdentifier>{80491ac2-2577-4613-b01c-456366ac3482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Base\Type">
+      <UniqueIdentifier>{34ac7789-2dda-417b-9324-9799b9ecf674}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Base\Module">
+      <UniqueIdentifier>{fbda3cea-4db6-44b4-b433-3a74e72d72bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Module">
+      <UniqueIdentifier>{d31f8f61-c14e-44f6-851c-8d8e685854d6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Base\_Module\API.h">
+      <Filter>Include\Base\_Moudle</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Base\Type\String.h">
+      <Filter>Include\Base\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Base\Moudle\Module.h">
+      <Filter>Include\Base\Module</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Srouce\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Srouce\Module\Module.cpp">
+      <Filter>Source\Module</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,6 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <Filter Include="Include">
+      <UniqueIdentifier>{6d79303c-47ae-4840-9a19-639d69287243}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{2238d48c-f5be-46b4-b404-b461476ebc1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Platform">
+      <UniqueIdentifier>{7885708b-ad67-4436-9f85-c9ea995b0992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Platform\Filesystem">
+      <UniqueIdentifier>{946d3c31-f45d-4947-a5f4-a676d28e4ecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Platform\_Module">
+      <UniqueIdentifier>{cbc1d869-af73-40ec-b52e-df0b85a22e4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Platform\_Module\API.h">
+      <Filter>Include\Platform\_Module</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Platform\Filesystem\Path.h">
+      <Filter>Include\Platform\Filesystem</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
