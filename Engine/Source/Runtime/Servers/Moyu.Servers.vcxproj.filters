@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <Filter Include="_Module">
-      <UniqueIdentifier>{62bf3886-4930-45f0-9e8c-b198e379c8ac}</UniqueIdentifier>
+      <UniqueIdentifier>{29e11b14-9372-4cc0-887f-34e1678b2fc7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

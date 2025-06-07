@@ -25,8 +25,12 @@
       <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>$(ProjectName.ToUpper().Replace('.', '_'));_HAS_EXCEPTIONS=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="$(Platform) == 'x64'">NDEBUG;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="$(Configuration) == 'Debug'">MOYU_DEBUG=1;MOYU_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PreprocessorDefinitions Condition="$(Configuration) == 'Release'">MOYU_RELEASE=1;MOYU_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="$(Configuration) == 'Debug'">MOYU_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="$(Configuration) == 'Release'">MOYU_RELEASE=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(ConfigurationType)' == 'DynamicLibrary'">MOYU_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <!--<PreprocessorDefinitions Condition="'$(ConfigurationType)' == 'StaticLibrary'">MOYU_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(ConfigurationType)' == 'Application'">MOYU_EXE;%(PreprocessorDefinitions)</PreprocessorDefinitions>-->
+      
       <!--<PreprocessorDefinitions Condition="$(Configuration) == 'Shipping'">MOYU_SHIPPING=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>-->
       <WholeProgramOptimization Condition="$(Configuration) == 'Debug'">false</WholeProgramOptimization>
       <WholeProgramOptimization Condition="$(Configuration) == 'Release'">true</WholeProgramOptimization>
@@ -41,7 +45,8 @@
       <Optimization Condition="$(Configuration) == 'Debug'">Disabled</Optimization>
       <Optimization Condition="$(Configuration) != 'Debug'">MaxSpeed</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreadedDLL</RuntimeLibrary>
       <ExceptionHandling>false</ExceptionHandling>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>

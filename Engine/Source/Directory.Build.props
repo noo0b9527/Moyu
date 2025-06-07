@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <!--C# Use-->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <BaseOutputPath>$(SolutionDir)Build\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)\$(Platform)_$(Configuration)\</OutputPath>
     <BaseIntermediateOutputPath>$(BaseOutputPath)_Temp\$(Platform)_$(Configuration)\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
