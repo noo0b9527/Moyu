@@ -11,14 +11,40 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-new-delete.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-override.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-stats.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\atomic.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\internal.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\prim.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\track.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\types.h" />
     <ClInclude Include="Memory\Memory.h" />
     <ClInclude Include="MoyuMacro.h" />
     <ClInclude Include="_Module\API.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\External\mimalloc\src\alloc-aligned.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\alloc-posix.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\alloc.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\arena.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\bitmap.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\heap.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\init.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\libc.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\options.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\os.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\page.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\prim\prim.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\random.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\segment-map.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\segment.c" />
+    <ClCompile Include="..\..\..\External\mimalloc\src\stats.c" />
     <ClCompile Include="Memory\Memory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\External\mimalloc\src\prim\readme.md" />
     <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

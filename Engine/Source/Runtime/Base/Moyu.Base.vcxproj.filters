@@ -7,22 +7,118 @@
     <Filter Include="Memory">
       <UniqueIdentifier>{3d85405f-d69d-4f9d-8d5b-b2664a96e15a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="External">
+      <UniqueIdentifier>{9f0f8968-4c08-45f3-97b4-6142f5ddac86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\mimalloc">
+      <UniqueIdentifier>{a1cd012f-c2b7-4770-9f33-6631ca2b695c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\mimalloc\include">
+      <UniqueIdentifier>{2f4873ec-ad54-4cf0-a353-635f13e93e55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\mimalloc\src">
+      <UniqueIdentifier>{f26bcd26-2f48-4a28-a5fa-70adfec304a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\mimalloc\include\mimalloc">
+      <UniqueIdentifier>{a7b92c49-3311-46a0-9e5a-84484355831c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\mimalloc\src\prim">
+      <UniqueIdentifier>{a15a955c-7802-4eae-8523-78cb1ba0892d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_Module\API.h">
       <Filter>_Module</Filter>
     </ClInclude>
+    <ClInclude Include="MoyuMacro.h" />
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc.h">
+      <Filter>External\mimalloc\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-new-delete.h">
+      <Filter>External\mimalloc\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-override.h">
+      <Filter>External\mimalloc\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-stats.h">
+      <Filter>External\mimalloc\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\atomic.h">
+      <Filter>External\mimalloc\include\mimalloc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\internal.h">
+      <Filter>External\mimalloc\include\mimalloc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\prim.h">
+      <Filter>External\mimalloc\include\mimalloc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\track.h">
+      <Filter>External\mimalloc\include\mimalloc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\types.h">
+      <Filter>External\mimalloc\include\mimalloc</Filter>
+    </ClInclude>
     <ClInclude Include="Memory\Memory.h">
       <Filter>Memory</Filter>
     </ClInclude>
-    <ClInclude Include="MoyuMacro.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\External\mimalloc\src\alloc.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\alloc-aligned.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\alloc-posix.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\arena.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\bitmap.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\heap.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\init.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\libc.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\options.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\os.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\page.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\random.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\segment.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\segment-map.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\stats.c">
+      <Filter>External\mimalloc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\External\mimalloc\src\prim\prim.c">
+      <Filter>External\mimalloc\src\prim</Filter>
+    </ClCompile>
     <ClCompile Include="Memory\Memory.cpp">
       <Filter>Memory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="..\..\..\External\mimalloc\src\prim\readme.md">
+      <Filter>External\mimalloc\src\prim</Filter>
+    </None>
   </ItemGroup>
 </Project>

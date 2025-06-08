@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runtime", "Runtime", "{02EA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PropertySheets", "PropertySheets", "{79A97DC7-FB6D-4ABF-8674-83E48AFDC47C}"
 	ProjectSection(SolutionItems) = preProject
+		Engine\Source\PropertySheets\mimalloc.props = Engine\Source\PropertySheets\mimalloc.props
 		Engine\Source\PropertySheets\Moyu.props = Engine\Source\PropertySheets\Moyu.props
 	EndProjectSection
 EndProject

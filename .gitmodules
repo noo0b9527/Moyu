@@ -1,0 +1,3 @@
+[submodule "Engine/External/mimalloc"]
+	path = Engine/External/mimalloc
+	url = https://github.com/noo0b9527/mimalloc.git

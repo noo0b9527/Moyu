@@ -34,7 +34,9 @@ void TestCustomAllocator()
     auto elapsed =
         std::chrono::duration<double, std::milli>(end - start).count();
 
-    Moyu::Memory::DumpMemoryReport();
+   // Moyu::Memory::DumpMemoryReport();
+
+    Moyu::ReportLeaks();
 
     std::cout << "[Moyu::Malloc/Free] Allocated and freed " << count
               << " objects in " << elapsed << " ms\n";

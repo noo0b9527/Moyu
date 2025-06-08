@@ -1,5 +1,6 @@
 #pragma once
 
+#include "mimalloc.h"
 #include <cstdint>
 #include <memory>
 #include <source_location>
@@ -47,10 +48,6 @@ namespace Moyu
                 reinterpret_cast<uintptr_t>(address), requiredAlignment);
         }
 
-        MOYU_BASE_API size_t MOYU_BASE_CALL GetTotalRequestedMemory();
-        MOYU_BASE_API size_t MOYU_BASE_CALL GetTotalAllocatedMemory();
-        MOYU_BASE_API void                  DumpMemoryReport();
-
     } // namespace Memory
 
     enum class AllocationType : uint8_t
@@ -66,20 +63,14 @@ namespace Moyu
         kAllocFree        = 8,
     };
 
-    [[nodiscard]] MOYU_BASE_API void* MOYU_BASE_CALL
-    Allocator(char const* sourceFile, uint32_t const sourceLine,
-              char const* sourceFunc, AllocationType const allocationType,
-              size_t const reportedSize, size_t const alignment);
+    [[nodiscard]] MOYU_BASE_API void* MOYU_BASE_CALL TrackAllocation(
+        size_t size, size_t alignment,
+        const std::source_location& loc = std::source_location::current());
 
-    [[nodiscard]] MOYU_BASE_API void* MOYU_BASE_CALL
-    Reallocator(char const* sourceFile, uint32_t const sourceLine,
-                char const* sourceFunc, AllocationType const reallocationType,
-                size_t const reportedSize, void* reportedAddress);
+    MOYU_BASE_API void MOYU_BASE_CALL TrackDeallocation(void*  reportedAddress,
+                                                        size_t alignment);
 
-    MOYU_BASE_API void MOYU_BASE_CALL
-    Deallocator(char const* sourceFile, uint32_t const sourceLine,
-                char const* sourceFunc, AllocationType const deallocationType,
-                const void* reportedAddress);
+    MOYU_BASE_API void MOYU_BASE_CALL ReportLeaks();
 
     template<typename T>
     [[nodiscard]] inline T*
@@ -87,23 +78,8 @@ namespace Moyu
            const std::source_location& loc  = std::source_location::current())
     {
         size_t alignment = alignof(T);
-        alignment = alignment < sizeof(void*) ? sizeof(void*) : alignment;
-        void* pMemory =
-            Allocator(loc.file_name(), loc.line(), loc.function_name(),
-                      AllocationType::kAllocMalloc, size, alignment);
-        return static_cast<T*>(pMemory);
-    }
-
-    template<typename T>
-    [[nodiscard]] inline T*
-    Realloc(T* pType, size_t reportedSize,
-            const std::source_location& loc = std::source_location::current())
-    {
-        size_t alignment = alignof(T);
-        alignment = alignment < sizeof(void*) ? sizeof(void*) : alignment;
-        void* pMemory =
-            Reallocator(loc.file_name(), loc.line(), loc.function_name(),
-                        AllocationType::kAllocRealloc, reportedSize, pType);
+        alignment     = alignment < sizeof(void*) ? sizeof(void*) : alignment;
+        void* pMemory = TrackAllocation(size, alignment, loc);
         return static_cast<T*>(pMemory);
     }
 
@@ -113,36 +89,34 @@ namespace Moyu
         const std::source_location& loc = std::source_location::current())
     {
         size_t alignment = alignof(T);
-        alignment = alignment < sizeof(void*) ? sizeof(void*) : alignment;
-        void* pMemory =
-            Allocator(loc.file_name(), loc.line(), loc.function_name(),
-                      AllocationType::kAllocNew, sizeof(T), alignment);
+        alignment     = alignment < sizeof(void*) ? sizeof(void*) : alignment;
+        void* pMemory = TrackAllocation(sizeof(T), alignment, loc);
         return new (pMemory) T(std::forward<Args>(args)...);
     }
 
     template<typename T>
-    inline void
-    Delete(T*&                         pType,
-           const std::source_location& loc = std::source_location::current())
+    inline void Delete(T*& pType)
     {
         if (pType != nullptr)
         {
+            size_t alignment = alignof(T);
+            alignment = alignment < sizeof(void*) ? sizeof(void*) : alignment;
+
             pType->~T();
-            Deallocator(loc.file_name(), loc.line(), loc.function_name(),
-                        AllocationType::kAllocDelete, pType);
+            TrackDeallocation(pType, alignment);
             pType = nullptr;
         }
     }
 
     template<typename T>
-    inline void
-    Free(T*&                         pType,
-         const std::source_location& loc = std::source_location::current())
+    inline void Free(T*& pType)
     {
         if (pType != nullptr)
         {
-            Deallocator(loc.file_name(), loc.line(), loc.function_name(),
-                        AllocationType::kAllocFree, pType);
+            size_t alignment = alignof(T);
+            alignment = alignment < sizeof(void*) ? sizeof(void*) : alignment;
+
+            TrackDeallocation(pType, alignment);
             pType = nullptr;
         }
     }

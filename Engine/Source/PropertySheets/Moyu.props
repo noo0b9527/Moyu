@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)Engine\Source\PropertySheets\mimalloc.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros">
     <MoyuRootDir>$(SolutionDir)</MoyuRootDir>
@@ -15,7 +16,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
       <WarningsAsErrors>true</WarningsAsErrors>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -35,7 +36,7 @@
       <WholeProgramOptimization Condition="$(Configuration) == 'Debug'">false</WholeProgramOptimization>
       <WholeProgramOptimization Condition="$(Configuration) == 'Release'">true</WholeProgramOptimization>
       <!--<WholeProgramOptimization Condition="$(Configuration) == 'Shipping'">true</WholeProgramOptimization>-->
-      <DisableSpecificWarnings>4189;4946;4191;5220;4266;4623;4711;4388;4355;5031;4774;4582;4365;5246;4061;5219;4514;4505;4251;4100;4127;4201;4577;4464;4668;4710;4820;5052;4619;4625;4626;5026;5027;5045;26495;5262;5264;5267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4201;4324;4127%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <IntrinsicFunctions Condition="$(Configuration) == 'Debug'">true</IntrinsicFunctions>
       <IntrinsicFunctions Condition="$(Configuration) != 'Debug'">false</IntrinsicFunctions>
       <FunctionLevelLinking Condition="$(Configuration) == 'Debug'">true</FunctionLevelLinking>
