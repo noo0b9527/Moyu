@@ -1,5 +1,6 @@
 #include "Runtime/Base/Module/Module.h"
 #include "Runtime/Base/Memory/Memory.h"
+#include "Runtime/Base/MoyuMacro.h"
 #include "Runtime/Base/Type/Type.h"
 
 #include <map>
@@ -81,6 +82,37 @@ namespace Moyu
         return it->second;
     }
 
-    void Module::RegisterInstance(Module*)
-    {}
+    void Module::RegisterInstance(Module* instance)
+    {
+        MOYU_ASSERT(instance != nullptr);
+
+        std::string name(instance->GetName());
+
+        ModuleRegistry& registry = RegistryInstance();
+
+        auto it = registry.find(name);
+
+        if (it != registry.end())
+        {
+            if (it->second == instance)
+            {
+                return;
+            }
+
+            MOYU_ASSERT(false);
+        }
+        registry.insert(std::make_pair(name, instance));
+
+        ModuleType type = instance->GetModuleType();
+        MOYU_ASSERT(type != ModuleType::Unkown);
+
+        if (!m_instances[type])
+        {
+            //Todo: Warning
+        }
+
+        m_instances[type] = instance;
+    }
+
+
 } // namespace Moyu
