@@ -16,6 +16,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
+      <WarningLevel>EnableWarnings</WarningLevel>
       <WarningLevel>Level4</WarningLevel>
       <TreatWarningAsError>true</TreatWarningAsError>
       <WarningsAsErrors>true</WarningsAsErrors>

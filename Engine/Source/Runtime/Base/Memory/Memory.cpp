@@ -10,44 +10,43 @@
 
 #include "Runtime/Base/MoyuMacro.h"
 
-struct AllocationInfo
-{
-    uintptr_t            Ptr;
-    size_t               Size;
-    size_t               Alignment;
-    std::source_location Location;
-};
-
-static std::map<void*, AllocationInfo> allocations_;
-static std::mutex                      mutex_;
-
 namespace Moyu
 {
+    struct AllocationInfo
+    {
+        uintptr_t            Ptr;
+        size_t               Size;
+        size_t               Alignment;
+        std::source_location Location;
+    };
+
+    static std::map<void*, AllocationInfo> s_Allocations;
+    static std::mutex                      s_Mutex;
+
     void* TrackAllocation(size_t size, size_t alignment,
                           const std::source_location& loc)
     {
-        std::lock_guard<std::mutex> lock(mutex_);
+        std::lock_guard<std::mutex> lock(s_Mutex);
         void* reportedAddress = mi_malloc_aligned(size, alignment);
         MOYU_ASSERT(reportedAddress != nullptr);
-        allocations_[reportedAddress] = AllocationInfo {
+        s_Allocations[reportedAddress] = AllocationInfo {
             reinterpret_cast<uintptr_t>(reportedAddress), size, alignment, loc};
         return reportedAddress;
     }
 
-    void MOYU_BASE_CALL TrackDeallocation(void*  reportedAddress,
-                                          size_t alignment)
+    void TrackDeallocation(void* reportedAddress, size_t alignment)
     {
-        std::lock_guard<std::mutex> lock(mutex_);
-        auto                        it = allocations_.find(reportedAddress);
-        MOYU_ASSERT(it != allocations_.end());
-        allocations_.erase(it);
+        std::lock_guard<std::mutex> lock(s_Mutex);
+        auto                        it = s_Allocations.find(reportedAddress);
+        MOYU_ASSERT(it != s_Allocations.end());
+        s_Allocations.erase(it);
         mi_free_aligned(reportedAddress, alignment);
     }
 
     void ReportLeaks()
     {
-        std::lock_guard<std::mutex> lock(mutex_);
-        if (allocations_.empty())
+        std::lock_guard<std::mutex> lock(s_Mutex);
+        if (s_Allocations.empty())
         {
             std::cout << "No memory leaks detected.\n";
         }
@@ -55,9 +54,9 @@ namespace Moyu
         {
             std::cerr << std::format(
                 "Memory leak detected: {} allocation(s) not freed:\n",
-                allocations_.size());
+                s_Allocations.size());
 
-            for (const auto& [ptr, info] : allocations_)
+            for (const auto& [ptr, info] : s_Allocations)
             {
                 std::cerr << std::format("Leaked {} bytes (aligned to {}) at "
                                          "{} allocated at {}:{}\n",

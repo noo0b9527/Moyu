@@ -1,10 +1,8 @@
 #pragma once
 
-#include "mimalloc.h"
 #include <cstdint>
 #include <memory>
 #include <source_location>
-#include <utility>
 
 #include "Runtime/Base/_Module/API.h"
 
@@ -46,6 +44,11 @@ namespace Moyu
         {
             return CalculatePaddingForAlignment(
                 reinterpret_cast<uintptr_t>(address), requiredAlignment);
+        }
+
+        inline size_t AlignUp(size_t size, size_t alignment)
+        {
+            return (size + alignment - 1) & (~(alignment - 1));
         }
 
     } // namespace Memory

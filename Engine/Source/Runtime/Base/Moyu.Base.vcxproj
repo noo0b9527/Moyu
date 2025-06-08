@@ -21,7 +21,11 @@
     <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\track.h" />
     <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc\types.h" />
     <ClInclude Include="Memory\Memory.h" />
+    <ClInclude Include="Memory\StrongRef.h" />
+    <ClInclude Include="Module\Module.h" />
     <ClInclude Include="MoyuMacro.h" />
+    <ClInclude Include="Object\Object.h" />
+    <ClInclude Include="Type\Type.h" />
     <ClInclude Include="_Module\API.h" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +46,9 @@
     <ClCompile Include="..\..\..\External\mimalloc\src\segment.c" />
     <ClCompile Include="..\..\..\External\mimalloc\src\stats.c" />
     <ClCompile Include="Memory\Memory.cpp" />
+    <ClCompile Include="Module\Module.cpp" />
+    <ClCompile Include="Object\Object.cpp" />
+    <ClCompile Include="Type\Type.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\External\mimalloc\src\prim\readme.md" />

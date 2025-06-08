@@ -25,6 +25,15 @@
     <Filter Include="External\mimalloc\src\prim">
       <UniqueIdentifier>{a15a955c-7802-4eae-8523-78cb1ba0892d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{8164eb8a-9c8a-44e7-b969-af0027df2327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Type">
+      <UniqueIdentifier>{249eecab-ced9-464a-afce-b32d030f108a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Module">
+      <UniqueIdentifier>{b0cf0e6c-472c-475b-b88c-d9219d75e937}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_Module\API.h">
@@ -60,6 +69,18 @@
     </ClInclude>
     <ClInclude Include="Memory\Memory.h">
       <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Type\Type.h">
+      <Filter>Type</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\StrongRef.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Module\Module.h">
+      <Filter>Module</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +134,15 @@
     </ClCompile>
     <ClCompile Include="Memory\Memory.cpp">
       <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Object.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Type\Type.cpp">
+      <Filter>Type</Filter>
+    </ClCompile>
+    <ClCompile Include="Module\Module.cpp">
+      <Filter>Module</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
