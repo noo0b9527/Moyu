@@ -1,14 +1,12 @@
 # Moyu
 
-## Todo List
+## Project Architecture
 
-Project layered design, from top to bottom
+![Architecture](ProjectArchitecture.png)
 
-Platform layer: encapsulates system API, large platform differences, and implements underlying primitives
+## Projects Reference
 
-## Projects Designs
-
-**The current project refers to the designs of the following open source game engine projects.**
+**The design of some modules of the current project is referenced from the following open source projects.**
 
 [**LÖVE**](https://github.com/love2d/love) LÖVE is an awesome 2D game framework for Lua. [**LICENSE**](https://github.com/love2d/love?tab=License-1-ov-file)
 
