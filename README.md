@@ -1,5 +1,11 @@
 # Moyu
 
+## Todo List
+
+Project layered design, from top to bottom
+
+Platform layer: encapsulates system API, large platform differences, and implements underlying primitives
+
 ## Projects Designs
 
 **The current project refers to the designs of the following open source game engine projects.**
