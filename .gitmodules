@@ -1,3 +1,6 @@
 [submodule "Engine/External/mimalloc"]
 	path = Engine/External/mimalloc
 	url = https://github.com/noo0b9527/mimalloc.git
+[submodule "Engine/External/spdlog"]
+	path = Engine/External/spdlog
+	url = https://github.com/noo0b9527/spdlog.git

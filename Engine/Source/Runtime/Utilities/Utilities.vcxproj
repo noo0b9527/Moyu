@@ -10,6 +10,18 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\External\External.vcxproj">
+      <Project>{7e8557fd-bb85-4ac8-8d2d-173acb29b1e3}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Utilities\Assert.h" />
+    <ClInclude Include="Include\Utilities\Log.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Log\Log.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

@@ -1,2 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{82de37b7-6d21-496c-9af0-ff66511b7214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Utilities">
+      <UniqueIdentifier>{79adf2a8-1ffd-47cd-9fb8-92b2ca8b652c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{8b8f13a8-5525-4092-96af-af5edca2762f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Log">
+      <UniqueIdentifier>{c54fbe0f-66ba-42a3-8e45-f01a6ddc7cd1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Utilities\Log.h">
+      <Filter>Include\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Utilities\Assert.h">
+      <Filter>Include\Utilities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Log\Log.cpp">
+      <Filter>Source\Log</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

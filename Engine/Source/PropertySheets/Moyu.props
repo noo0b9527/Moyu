@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets">
-    <Import Project="$(SolutionDir)Engine\Source\PropertySheets\mimalloc.props" />
+    <Import Project="$(SolutionDir)Engine\Source\PropertySheets\Mimalloc.props" />
+    <Import Project="$(SolutionDir)Engine\Source\PropertySheets\Spdlog.props"/>
   </ImportGroup>
   <PropertyGroup Label="UserMacros">
     <MoyuRootDir>$(SolutionDir)</MoyuRootDir>
@@ -25,6 +26,7 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <AdditionalOptions>/bigobj /Zo /Zc:inline %(AdditionalOptions)</AdditionalOptions>
       <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source\Runtime\Utilities\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>$(ProjectName.ToUpper().Replace('.', '_'));_HAS_EXCEPTIONS=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="$(Platform) == 'x64'">NDEBUG;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="$(Configuration) == 'Debug'">MOYU_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -37,7 +39,7 @@
       <WholeProgramOptimization Condition="$(Configuration) == 'Debug'">false</WholeProgramOptimization>
       <WholeProgramOptimization Condition="$(Configuration) == 'Release'">true</WholeProgramOptimization>
       <!--<WholeProgramOptimization Condition="$(Configuration) == 'Shipping'">true</WholeProgramOptimization>-->
-      <DisableSpecificWarnings>4201;4324;4127%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4201;4324;4127;4459;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <IntrinsicFunctions Condition="$(Configuration) == 'Debug'">true</IntrinsicFunctions>
       <IntrinsicFunctions Condition="$(Configuration) != 'Debug'">false</IntrinsicFunctions>
       <FunctionLevelLinking Condition="$(Configuration) == 'Debug'">true</FunctionLevelLinking>
