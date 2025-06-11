@@ -18,6 +18,8 @@
 
 [**mimalloc**](https://github.com/microsoft/mimalloc) mimalloc is a compact general purpose allocator with excellent performance. [**LICENSE**](https://github.com/microsoft/mimalloc?tab=MIT-1-ov-file)
 
+[**spdlog**](https://github.com/gabime/spdlog) Fast C++ logging library. [**LICENSE**](https://github.com/gabime/spdlog?tab=License-1-ov-file#readme)
+
 ## Project Name Notice
 
 The name "Moyu" is used for identification purposes only and is not intended to infringe any existing trademark.  
