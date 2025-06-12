@@ -4,7 +4,6 @@
 #include <source_location>
 #include <string_view>
 
-
 #include "Base/Config.h"
 
 namespace Moyu
@@ -70,8 +69,8 @@ namespace Moyu
         }
 
     private:
-        void Log(LogLevelType level, std::string_view message,
-                 std::source_location& loc);
+        static void Log(LogLevelType level, std::string_view message,
+                        std::source_location& loc);
 
         std::source_location m_location;
     };
