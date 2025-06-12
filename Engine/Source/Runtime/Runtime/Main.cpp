@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "Utilities/Log.h"
-#include "Utilities/Assert.h"
+#include "Base/Log.h"
+#include "Base/Assert.h"
 
 int main()
 {

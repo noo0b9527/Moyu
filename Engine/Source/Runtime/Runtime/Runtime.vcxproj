@@ -77,8 +77,8 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Utilities\Utilities.vcxproj">
-      <Project>{34379e0d-35ec-4cdc-bb78-4b846e36b83f}</Project>
+    <ProjectReference Include="..\Base\Base.vcxproj">
+      <Project>{3c4f74b7-2641-45d0-93cf-dd267e41c9e2}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

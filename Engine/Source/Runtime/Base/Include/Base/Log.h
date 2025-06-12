@@ -4,6 +4,9 @@
 #include <source_location>
 #include <string_view>
 
+
+#include "Base/Config.h"
+
 namespace Moyu
 {
     enum class LogLevelType

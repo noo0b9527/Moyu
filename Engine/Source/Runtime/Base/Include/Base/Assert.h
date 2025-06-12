@@ -1,12 +1,13 @@
 #pragma once
 
-#include "Utilities/Log.h"
+#include "Base/Config.h"
+#include "Base/Log.h"
 
 #if !defined(MOYU_RELEASE)
 #define MOYU_DEVELOPMENT_TOOLS 1
 #endif
 
-#if defined(_WIN32) && defined(MOYU_DEVELOPMENT_TOOLS)
+#if defined(MOYU_PLATFORM_WINDOWS) && defined(MOYU_DEVELOPMENT_TOOLS)
 #define MOYU_DEBUG_BREAK() __debugbreak()
 #endif
 
