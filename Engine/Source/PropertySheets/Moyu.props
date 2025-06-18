@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)Engine\Source\PropertySheets\Mimalloc.props" />
+    <Import Project="$(SolutionDir)Engine\Source\PropertySheets\Spdlog.props"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <MoyuRootDir>$(SolutionDir)</MoyuRootDir>
+    <MoyuBuildRootDir>$(SolutionDir)Build\</MoyuBuildRootDir>
+    <OutDir>$(MoyuBuildRootDir)$(Platform)_$(Configuration)\</OutDir>
+    <IntDir>$(MoyuBuildRootDir)_Temp\$(Platform)_$(Configuration)\$(ProjectName)\</IntDir>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>EnableWarnings</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningsAsErrors>true</WarningsAsErrors>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ConformanceMode>true</ConformanceMode>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <AdditionalOptions>/bigobj /Zo /Zc:inline %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source\Runtime\Base\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>$(ProjectName.ToUpper().Replace('.', '_'));_HAS_EXCEPTIONS=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="$(Platform) == 'x64'">NDEBUG;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="$(Configuration) == 'Debug'">MOYU_DEBUG=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="$(Configuration) == 'Release'">MOYU_RELEASE=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(ConfigurationType)' == 'DynamicLibrary'">MOYU_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <!--<PreprocessorDefinitions Condition="'$(ConfigurationType)' == 'StaticLibrary'">MOYU_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(ConfigurationType)' == 'Application'">MOYU_EXE;%(PreprocessorDefinitions)</PreprocessorDefinitions>-->
+      
+      <!--<PreprocessorDefinitions Condition="$(Configuration) == 'Shipping'">MOYU_SHIPPING=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>-->
+      <WholeProgramOptimization Condition="$(Configuration) == 'Debug'">false</WholeProgramOptimization>
+      <WholeProgramOptimization Condition="$(Configuration) == 'Release'">true</WholeProgramOptimization>
+      <!--<WholeProgramOptimization Condition="$(Configuration) == 'Shipping'">true</WholeProgramOptimization>-->
+      <DisableSpecificWarnings>4201;4324;4127;4459;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <IntrinsicFunctions Condition="$(Configuration) == 'Debug'">true</IntrinsicFunctions>
+      <IntrinsicFunctions Condition="$(Configuration) != 'Debug'">false</IntrinsicFunctions>
+      <FunctionLevelLinking Condition="$(Configuration) == 'Debug'">true</FunctionLevelLinking>
+      <FunctionLevelLinking Condition="$(Configuration) != 'Debug'">true</FunctionLevelLinking>
+      <InlineFunctionExpansion Condition="$(Configuration) == 'Debug'">OnlyExplicitInline</InlineFunctionExpansion>
+      <InlineFunctionExpansion Condition="$(Configuration) != 'Debug'">AnySuitable</InlineFunctionExpansion>
+      <Optimization Condition="$(Configuration) == 'Debug'">Disabled</Optimization>
+      <Optimization Condition="$(Configuration) != 'Debug'">MaxSpeed</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)'=='Release'">MultiThreadedDLL</RuntimeLibrary>
+      <ExceptionHandling>false</ExceptionHandling>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <LinkIncremental>true</LinkIncremental>
+      <LinkTimeCodeGeneration Condition="$(Configuration) != 'Shipping'">Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration Condition="$(Configuration) == 'Shipping'">UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <GenerateDebugInformation Condition="$(Configuration) != 'Shipping'">DebugFull</GenerateDebugInformation>
+      <GenerateDebugInformation Condition="$(Configuration) == 'Shipping'">No</GenerateDebugInformation>
+      <RandomizedBaseAddress Condition="$(Configuration) == 'Debug'">false</RandomizedBaseAddress>
+      <CreateHotPatchableImage Condition="$(Configuration) != 'Shipping'">Enabled</CreateHotPatchableImage>
+      <OptimizeReferences Condition="$(Configuration) != 'Shipping'">false</OptimizeReferences>
+      <OptimizeReferences Condition="$(Configuration) == 'Shipping'">true</OptimizeReferences>
+      <EnableCOMDATFolding Condition="$(Configuration) != 'Shipping'">false</EnableCOMDATFolding>
+      <EnableCOMDATFolding Condition="$(Configuration) == 'Shipping'">true</EnableCOMDATFolding>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Target Name="TodoGenerate">
+    <ItemGroup>
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <ComputeCompileInputsTargets>
+      $(ComputeCompileInputsTargets)
+    </ComputeCompileInputsTargets>
+  </PropertyGroup>
+</Project>

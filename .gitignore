@@ -2,3 +2,6 @@
 bin/
 obj/
 out/
+x64/
+Build/
+*.user
