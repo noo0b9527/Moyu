@@ -1,6 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <Filter Include="Include">
+      <UniqueIdentifier>{df47835e-fc26-4f62-af1b-15d0991c1928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{e9e6be8c-3da4-408d-b918-fc06c9c1f709}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Runtime">
+      <UniqueIdentifier>{26bd84ac-1b5a-45d9-84cb-6b344727c6b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Runtime\_Module">
+      <UniqueIdentifier>{6ca590f0-379d-4bb2-9b9d-afcaca4ae9e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Runtime\_Module\API.h">
+      <Filter>Include\Runtime\_Module</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\RuntimeMain.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

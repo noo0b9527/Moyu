@@ -4,8 +4,13 @@
 #include "Base/Assert.h"
 #include "Base/Config.h"
 
+#include "Runtime/_Module/API.h"
+
 #if defined(MOYU_PLATFORM_WINDOWS) && defined(MOYU_DLL)
-extern "C" __declspec(dllexport) int RuntimeMain(int argc, char** argv);
+extern "C"
+{
+    MOYUAPI int MOYUCALL RuntimeMain(int argc, char** argv);
+}
 #endif
 
 
