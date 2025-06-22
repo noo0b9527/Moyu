@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+  </ImportGroup>
+  
+  <PropertyGroup Label="UserMacros">
+    <DotnetHostDir>$(SolutionDir)Engine\External\dotnethost\</DotnetHostDir>
+  </PropertyGroup>
+  
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\External\dotnethost\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>nethost.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DotnetHostDir)\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Target Name="DotnetHost_CopyDLL" BeforeTargets="Build">
+    <Copy SkipUnchangedFiles="True" SourceFiles="$(DotnetHostDir)\bin\nethost.dll" DestinationFolder="$(OutDir)" />
+  </Target>
+  <Target Name="DotnetHost_CleanDLL" BeforeTargets="Clean">
+    <Delete Files="$(OutDir)\nethost.dll" Condition="Exists('$(OutDir)\nethost.dll')" />
+  </Target>
+</Project>

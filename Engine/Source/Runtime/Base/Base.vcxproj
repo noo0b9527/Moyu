@@ -11,9 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Base\Assert.h" />
+    <ClInclude Include="Include\Base\DynamicLibrary.h" />
     <ClInclude Include="Include\Base\Log.h" />
     <ClInclude Include="Include\Base\Config.h" />
+    <ClInclude Include="Include\Base\Memory.h" />
+    <ClInclude Include="Include\Base\String.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\External\External.vcxproj">
@@ -21,7 +23,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\DynamicLibrary\DynamicLibrary.cpp" />
     <ClCompile Include="Source\Log\Log.cpp" />
+    <ClCompile Include="Source\Memory\Memory.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

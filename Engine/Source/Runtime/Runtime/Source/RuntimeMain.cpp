@@ -1,31 +1,47 @@
 #include <iostream>
 
-#include "Base/Log.h"
-#include "Base/Assert.h"
 #include "Base/Config.h"
+#include "Base/Log.h"
+
+#include "Module/Script.h"
 
 #include "Runtime/_Module/API.h"
 
-#if defined(MOYU_PLATFORM_WINDOWS) && defined(MOYU_DLL)
+#if defined(MOYU_PLATFORM_WINDOWS)
+#include <windows.h>
 extern "C"
 {
-    MOYUAPI int MOYUCALL RuntimeMain(int argc, char** argv);
+    MOYUAPI int MOYUCALL RuntimeMain(HINSTANCE instance, wchar_t const* rootPath);
 }
 #endif
 
-
-int RuntimeMain(int argc, char** argv)
+#if defined(MOYU_PLATFORM_WINDOWS)
+int RuntimeMain(HINSTANCE instance, wchar_t const* rootPath)
+#endif
 {
-    if (argc)
+
+#if defined(MOYU_PLATFORM_WINDOWS)
+    if (instance)
     {
-
     }
+#endif
 
-    if (argv)
-    {
+    Moyu::Log().Info("RuntimeMain Call");
+    Moyu::ScriptLoadDesc scriptLoadDesc {
+        .AssemblyRootPath   = rootPath,
+        .AssemblyName       = L"Editor.dll",
+        .AssemblyConfigName = L"Editor.runtimeconfig.json",
+        .AssemblyType       = L"Editor.Editor, Editor",
+    };
 
-    }
+    Moyu::ScriptAssembly scriptAssembly(scriptLoadDesc);
 
-    Moyu::Log().Info("这是一个测试信息{}", 12121212);
+    using EntranceFunction = void (*)();
+
+    EntranceFunction entrance = scriptAssembly.GetFunction<EntranceFunction>(
+        L"Entrance");
+
+    entrance();
+
     return 0;
 }

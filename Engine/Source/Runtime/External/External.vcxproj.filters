@@ -43,6 +43,9 @@
     <Filter Include="spdlog\include\spdlog\fmt\bundled">
       <UniqueIdentifier>{f846abbd-9252-4ed3-86fe-c005b78b8a42}</UniqueIdentifier>
     </Filter>
+    <Filter Include="dotnethost">
+      <UniqueIdentifier>{a3683b40-9dad-42b0-9622-ae434de78b59}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc.h">
@@ -383,6 +386,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\External\spdlog\include\spdlog\sinks\wincolor_sink-inl.h">
       <Filter>spdlog\include\spdlog\sinks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\dotnethost\coreclr_delegates.h">
+      <Filter>dotnethost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\dotnethost\hostfxr.h">
+      <Filter>dotnethost</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\External\dotnethost\nethost.h">
+      <Filter>dotnethost</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

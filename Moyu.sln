@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Runtime", "4. Runtime", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. PropertySheets", "6. PropertySheets", "{79A97DC7-FB6D-4ABF-8674-83E48AFDC47C}"
 	ProjectSection(SolutionItems) = preProject
+		Engine\Source\PropertySheets\DotnetHost.props = Engine\Source\PropertySheets\DotnetHost.props
 		Engine\Source\PropertySheets\Mimalloc.props = Engine\Source\PropertySheets\Mimalloc.props
 		Engine\Source\PropertySheets\Moyu.props = Engine\Source\PropertySheets\Moyu.props
 		Engine\Source\PropertySheets\Spdlog.props = Engine\Source\PropertySheets\Spdlog.props
@@ -35,6 +36,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Misc", "5. Misc", "{3138
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Launcher", "Engine\Source\Launcher\Launcher.vcxproj", "{B0468910-8E9E-4C47-B0B0-F029D62B0406}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Editor", "Engine\Source\Editor\Editor\Editor.csproj", "{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Source\Engine\Engine\Engine.csproj", "{6DA10228-0531-8DA0-5986-A60A6730BCC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +89,22 @@ Global
 		{B0468910-8E9E-4C47-B0B0-F029D62B0406}.Release|Any CPU.Build.0 = Release|x64
 		{B0468910-8E9E-4C47-B0B0-F029D62B0406}.Release|x64.ActiveCfg = Release|x64
 		{B0468910-8E9E-4C47-B0B0-F029D62B0406}.Release|x64.Build.0 = Release|x64
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}.Debug|x64.ActiveCfg = Debug|x64
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}.Debug|x64.Build.0 = Debug|x64
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}.Release|x64.ActiveCfg = Release|x64
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5}.Release|x64.Build.0 = Release|x64
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0}.Debug|Any CPU.Build.0 = Debug|x64
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0}.Debug|x64.ActiveCfg = Debug|x64
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0}.Debug|x64.Build.0 = Debug|x64
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0}.Release|Any CPU.ActiveCfg = Release|x64
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0}.Release|Any CPU.Build.0 = Release|x64
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0}.Release|x64.ActiveCfg = Release|x64
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +115,8 @@ Global
 		{3C4F74B7-2641-45D0-93CF-DD267E41C9E2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{5E9FECAC-6D2A-4D1D-8DD4-F1452027D204} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{B0468910-8E9E-4C47-B0B0-F029D62B0406} = {BCD334FF-907C-45B2-BCCF-EB276083BDAC}
+		{4796BA38-C2A7-6FBC-E0AB-0581539D1CC5} = {CC76229A-3917-4F0F-94E0-B3BA9FB8678A}
+		{6DA10228-0531-8DA0-5986-A60A6730BCC0} = {30CD9AC4-014B-478F-8224-E7C130B10811}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {276FE93C-B4BE-486B-8E24-837648D150DD}

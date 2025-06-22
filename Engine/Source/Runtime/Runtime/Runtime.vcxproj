@@ -73,6 +73,9 @@
     <ProjectReference Include="..\Base\Base.vcxproj">
       <Project>{3c4f74b7-2641-45d0-93cf-dd267e41c9e2}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Module\Module.vcxproj">
+      <Project>{c4d801ea-d7c0-4056-b725-210bc3126b9c}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Runtime\_Module\API.h" />

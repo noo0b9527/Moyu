@@ -11,6 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\External\dotnethost\coreclr_delegates.h" />
+    <ClInclude Include="..\..\..\External\dotnethost\hostfxr.h" />
+    <ClInclude Include="..\..\..\External\dotnethost\nethost.h" />
     <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-new-delete.h" />
     <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-override.h" />
     <ClInclude Include="..\..\..\External\mimalloc\include\mimalloc-stats.h" />
